@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bella Flora — premium gullar do'koni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg" id="bg" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="bar">
+    <button class="brand" data-go="home" aria-label="Bella Flowers — bosh sahifa">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <g fill="#d86b8e" opacity=".95">
+          <ellipse cx="20" cy="9" rx="5.5" ry="8.5"/>
+          <ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(288 20 20)"/>
+        </g>
+        <circle cx="20" cy="20" r="5" fill="#f3c969"/>
+      </svg>
+      Bella Flora
+    </button>
+
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Gul yoki buket qidiring..." aria-label="Qidiruv" autocomplete="off">
+    </div>
+
+    <nav class="nav" aria-label="Asosiy menyu">
+      <button class="nav-link active" data-go="home">Bosh sahifa</button>
+      <button class="nav-link" data-go="orders">Mening buyurtmalarim</button>
+      <button class="cart-btn" id="cartBtn" data-go="cart" aria-label="Savat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="badge" id="badge">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- BOSH SAHIFA -->
+  <section class="view active" id="home">
+    <div class="hero">
+      <div>
+        <h1>Har bir his uchun <em>o'z guli</em> bor</h1>
+        <p>Tong paytida uzilgan gullardan qo'lda yig'ilgan buketlar. Buyurtma bering — biz shaharning istalgan manziliga yetkazamiz.</p>
+        <a class="btn rose" href="#catalog">Katalogni ko'rish</a>
+      </div>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+    </div>
+
+    <div id="catalog">
+      <div class="section-head">
+        <h2>Bizning gullar</h2>
+        <div class="chips">
+          <button class="chip active" data-cat="all">Barchasi</button>
+          <button class="chip" data-cat="buket">Buket gullar</button>
+          <button class="chip" data-cat="oddiy">Oddiy gullar</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- SAVAT -->
+  <section class="view" id="cart">
+    <h2 class="page-title">Savat</h2>
+    <div id="cartBody"></div>
+  </section>
+
+  <!-- BUYURTMALAR -->
+  <section class="view" id="orders">
+    <h2 class="page-title" style="margin-bottom:26px">Mening buyurtmalarim</h2>
+    <div class="list" id="ordersBody"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <span class="brand">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#e58aa8"><ellipse cx="20" cy="9" rx="5.5" ry="8.5"/><ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(72 20 20)"/><ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(144 20 20)"/><ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(216 20 20)"/><ellipse cx="20" cy="9" rx="5.5" ry="8.5" transform="rotate(288 20 20)"/></g><circle cx="20" cy="20" r="5" fill="#f3c969"/></svg>
+        Bella Flora
+      </span>
+      <p>Yangi uzilgan gullar va qo'lda yig'ilgan buketlar. Har bir buyurtma — alohida e'tibor bilan.</p>
+    </div>
+
+    <address class="foot-col">
+      <h4>Aloqa</h4>
+      <a href="tel:+998901234567">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 5 5l1.5-2.3L19 14.500V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+        +998 90 123-45-67
+      </a>
+      <span class="foot-text">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></svg>
+        Namangan Chortoq
+      </span>
+      <span class="foot-text">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Har kuni 08:00 – 22:00
+      </span>
+    </address>
+
+    <div class="foot-col">
+      <h4>Ijtimoiy tarmoqlar</h4>
+      <a href="https://t.me/bellaflowers" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4 3 11l5.500 2L10 19l3-3.500 4.500 3.500L21 4Z"/><path d="m8.500 13 8-6"/></svg>
+        Telegram kanali
+      </a>
+      <a href="https://instagram.com/bellaflowers" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6" fill="currentColor"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+  <p class="copy">© 2026 Bela flora Chortoq. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ---------- Ma'lumotlar ---------- */
+/* img — Unsplash fotosuratining ID raqami (photo- dan keyingi qism). O'zingizning rasmlaringizga almashtirish oson. */
+const PRODUCTS = [
+  {id:1,cat:"buket",name:"Qizil atirgullar buketi",unit:"ta atirgul",count:101,price:1290000,desc:"Klassik qizil atirgullar, sovg'a uchun",img:"1589095181425-c038b3871b6a"},
+  {id:2,cat:"buket",name:"Pushti atirgullar buketi",unit:"ta pushti atirgul",count:51,price:780000,desc:"Pushti qog'ozga o'ralgan nozik buket",img:"1680563094046-5d846e2c59d1"},
+  {id:3,cat:"buket",name:"Pushti-oq atirgullar buketi",unit:"ta atirgul",count:35,price:590000,desc:"Mayin pushti va oq atirgullar uyg'unligi",img:"1523693916903-027d144a2b7d"},
+  {id:4,cat:"buket",name:"Oq atirgullar buketi",unit:"ta oq atirgul",count:25,price:450000,desc:"To'y va tantanalar uchun toza oq rang",img:"1570112008549-e4181988109f"},
+  {id:5,cat:"buket",name:"Sariq atirgullar buketi",unit:"ta sariq atirgul",count:15,price:320000,desc:"Quyoshdek iliq kayfiyat ulashadi",img:"1673277848241-86e145cd7112"},
+  {id:6,cat:"buket",name:"Dala gullari buketi",unit:"dona dala guli",count:25,price:380000,desc:"Rang-barang dala gullari, qo'lda yig'ilgan",img:"1762969217496-32d784e7e557"},
+  {id:7,cat:"buket",name:"Quritilgan gullar buketi",unit:"dona quritilgan gul",count:20,price:340000,desc:"Shaftoli rangli qog'oz va lenta bilan",img:"1622658641558-235f26dd270b"},
+  {id:8,cat:"buket",name:"Quyosh buketi",unit:"ta aralash gul",count:21,price:520000,desc:"Kungaboqar, atirgul va gortenziya",img:"1778101410311-6cca527142d6"},
+  {id:9,cat:"oddiy",name:"Qizil atirgul",unit:"dona",count:1,price:18000,desc:"Uzun poyali yagona atirgul",img:"1559779080-6970e0186790"},
+  {id:10,cat:"oddiy",name:"Pushti atirgul",unit:"dona",count:1,price:16000,desc:"Yumshoq pushti rangli atirgul",img:"1582794543139-8ac9cb0f7b11"},
+  {id:11,cat:"oddiy",name:"Shafaq atirguli",unit:"dona",count:1,price:20000,desc:"To'q sariq, qizil va pushti ranglar o'yini",img:"1556712691-5c39e0e32a8e"},
+  {id:12,cat:"oddiy",name:"Nozik pushti atirgul",unit:"dona",count:1,price:16000,desc:"Yangi uzilgan, endigina ochilgan gul",img:"1615182787503-08365d1e7fae"}
+];
+
+/* ---------- Rasm ---------- */
+const imgUrl=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
+const art=(p,w=800)=>`<img src="${imgUrl(p.img,w)}" alt="${p.name}" loading="lazy" decoding="async">`;
+/* rasm yuklanmasa — chiroyli gradient zaxira ko'rinadi */
+document.addEventListener("error",e=>{if(e.target.tagName==="IMG")e.target.parentElement.classList.add("noimg")},true);
+
+/* ---------- Yordamchilar ---------- */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const find=id=>PRODUCTS.find(p=>p.id===id);
+const fmt=n=>n.toLocaleString("ru-RU").replace(/\u00a0/g," ")+" so'm";
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const compose=(p,q)=>p.cat==="buket"?`${p.count*q} ${p.unit}`+(q>1?` (${q} ta buket)`:""):`${q} ${p.unit}`;
+const dt=iso=>new Date(iso).toLocaleString("uz-UZ",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"});
+const I={
+  flower:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="5.5" r="3"/><circle cx="12" cy="18.5" r="3"/><circle cx="5.5" cy="12" r="3"/><circle cx="18.5" cy="12" r="3"/></svg>`,
+  truck:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>`,
+  check:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>`
+};
+
+/* ---------- Holat ---------- */
+let cart=[],orders=[],cat="all",query="",orderSeq=1000;
+try{
+  cart=JSON.parse(localStorage.getItem("bf_cart")||"[]").filter(c=>find(c.id));
+  orders=JSON.parse(localStorage.getItem("bf_orders")||"[]");
+  orderSeq=orders.reduce((m,o)=>Math.max(m,o.no),1000);
+}catch(e){}
+const save=()=>{try{localStorage.setItem("bf_cart",JSON.stringify(cart));localStorage.setItem("bf_orders",JSON.stringify(orders))}catch(e){}};
+
+/* ---------- Hero ---------- */
+$("#heroArt").innerHTML=`<img src="${imgUrl("1608027790251-5e0c80d043d9",900)}" alt="Pushti atirgullar buketi" decoding="async">`;
+
+/* ---------- Navigatsiya ---------- */
+function go(view){
+  $$(".view").forEach(s=>s.classList.toggle("active",s.id===view));
+  $$(".nav-link").forEach(b=>b.classList.toggle("active",b.dataset.go===view));
+  $("#cartBtn").classList.toggle("active",view==="cart");
+  if(view==="cart")renderCart();
+  if(view==="orders")renderOrders();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)go(g.dataset.go)});
+
+/* ---------- Katalog ---------- */
+function renderGrid(){
+  const list=PRODUCTS.filter(p=>(cat==="all"||p.cat===cat)&&p.name.toLowerCase().includes(query));
+  $("#grid").innerHTML=list.length?list.map(p=>`
+    <article class="card">
+      <div class="art">${art(p)}<span class="tag">${p.cat==="buket"?"Buket":"Oddiy gul"}</span></div>
+      <div class="card-body">
+        <h3>${esc(p.name)}</h3>
+        <span class="comp">${p.count} ${p.unit}</span>
+        <div class="card-foot"><span class="price">${fmt(p.price)}</span><button class="add" data-add="${p.id}">Savatga solish</button></div>
+      </div>
+    </article>`).join("")
+  :`<div class="empty" style="grid-column:1/-1">${I.flower}<p>Hech narsa topilmadi. Boshqa so'z bilan qidirib ko'ring.</p></div>`;
+}
+$("#search").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();if(!$("#home").classList.contains("active"))go("home");renderGrid()});
+$$(".chip").forEach(c=>c.addEventListener("click",()=>{cat=c.dataset.cat;$$(".chip").forEach(x=>x.classList.toggle("active",x===c));renderGrid()}));
+$("#grid").addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(b)openModal(+b.dataset.add)});
+
+/* ---------- Modal ---------- */
+let mq=1,mid=null;
+function openModal(id){mid=id;mq=1;drawModal();$("#overlay").classList.add("open");$("#modal [data-confirm]").focus()}
+function closeModal(){$("#overlay").classList.remove("open")}
+function drawModal(){
+  const p=find(mid);
+  $("#modal").innerHTML=`<div class="art">${art(p,1000)}</div>
+    <div class="modal-body">
+      <h3 id="mTitle">${esc(p.name)}</h3>
+      <p class="desc">${esc(p.desc)}</p>
+      <div class="compose">${I.flower}<span>Tarkibi: <span id="mComp">${compose(p,mq)}</span></span></div>
+      <div class="row">
+        <div class="qty"><button data-q="-1" aria-label="Kamaytirish">−</button><span id="mq">${mq}</span><button data-q="1" aria-label="Ko'paytirish">+</button></div>
+        <span class="sum" id="mSum">${fmt(p.price*mq)}</span>
+      </div>
+      <div class="actions"><button class="btn ghost" data-close>Bekor qilish</button><button class="btn rose" data-confirm>Tasdiqlash</button></div>
+    </div>`;
+}
+$("#modal").addEventListener("click",e=>{
+  const q=e.target.closest("[data-q]");
+  if(q){const p=find(mid);mq=Math.min(99,Math.max(1,mq+ +q.dataset.q));
+    $("#mq").textContent=mq;$("#mComp").textContent=compose(p,mq);$("#mSum").textContent=fmt(p.price*mq)}
+  if(e.target.closest("[data-close]"))closeModal();
+  if(e.target.closest("[data-confirm]")){
+    const r=cart.find(c=>c.id===mid);r?r.qty=Math.min(99,r.qty+mq):cart.push({id:mid,qty:mq});
+    save();updateBadge(true);closeModal();toast("Savatga qo'shildi",find(mid).name,true);
+  }
+});
+$("#overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+/* ---------- Savat ---------- */
+function updateBadge(bump){
+  const b=$("#badge");b.textContent=cart.reduce((s,c)=>s+c.qty,0);
+  if(bump){b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}
+}
+function renderCart(){
+  const body=$("#cartBody");
+  if(!cart.length){body.innerHTML=`<div class="empty" style="margin-top:26px">${I.flower}<p>Savatingiz hozircha bo'sh.</p><button class="btn rose" data-go="home">Xaridni boshlash</button></div>`;return}
+  const total=cart.reduce((s,c)=>s+find(c.id).price*c.qty,0),count=cart.reduce((s,c)=>s+c.qty,0);
+  body.innerHTML=`<div class="cart-layout"><div class="list">${cart.map(c=>{const p=find(c.id);return`
+    <div class="line">
+      <div class="art">${art(p,320)}</div>
+      <div><h3>${esc(p.name)}</h3><p class="comp">Tarkibi: ${compose(p,c.qty)}</p>
+        <div class="qty"><button data-cq="${p.id}" data-d="-1" aria-label="Kamaytirish">−</button><span>${c.qty}</span><button data-cq="${p.id}" data-d="1" aria-label="Ko'paytirish">+</button></div></div>
+      <div class="line-end"><span class="price">${fmt(p.price*c.qty)}</span><button class="del" data-del="${p.id}">O'chirish</button></div>
+    </div>`}).join("")}</div>
+    <aside class="summary"><h3>Buyurtma</h3>
+      <div class="s-row"><span>Mahsulotlar</span><span>${count} ta</span></div>
+      <div class="s-row"><span>Yetkazib berish</span><span>Bepul</span></div>
+      <div class="s-total"><span>Jami</span><b>${fmt(total)}</b></div>
+      <button class="btn rose block" data-checkout>Rasmiylashtirish</button>
+    </aside></div>`;
+}
+$("#cartBody").addEventListener("click",e=>{
+  const q=e.target.closest("[data-cq]"),d=e.target.closest("[data-del]");
+  if(q){const r=cart.find(c=>c.id===+q.dataset.cq);r.qty=Math.min(99,Math.max(1,r.qty+ +q.dataset.d))}
+  else if(d)cart=cart.filter(c=>c.id!==+d.dataset.del);
+  else if(e.target.closest("[data-checkout]")){checkout();return}
+  else return;
+  save();updateBadge();renderCart();
+});
+
+/* ---------- Rasmiylashtirish ---------- */
+function checkout(){
+  if(!cart.length)return;
+  const items=cart.map(c=>{const p=find(c.id);return{id:p.id,name:p.name,comp:compose(p,c.qty),sum:p.price*c.qty}});
+  const now=new Date(),eta=new Date(now.getTime()+3*3600*1000),no=++orderSeq;
+  orders.unshift({no,items,total:items.reduce((s,i)=>s+i.sum,0),placed:now.toISOString(),eta:eta.toISOString()});
+  cart=[];save();updateBadge();
+  toast("Buyurtmangiz muvaffaqiyatli qabul qilindi!",`Zakaz № ${no}`);
+  go("orders");
+}
+
+/* ---------- Buyurtmalar ---------- */
+function renderOrders(){
+  $("#ordersBody").innerHTML=orders.length?orders.map(o=>`
+    <article class="order">
+      <div class="stack">${o.items.slice(0,3).map(i=>`<div class="art">${find(i.id)?art(find(i.id),240):""}</div>`).join("")}</div>
+      <div>
+        <div class="order-top"><span class="order-no">Zakaz № ${o.no}</span><span class="status">Qabul qilindi</span></div>
+        <ul>${o.items.map(i=>`<li>${esc(i.name)} — ${esc(i.comp)}</li>`).join("")}</ul>
+        <div class="eta">${I.truck}<span>Yetib kelish vaqti: ${dt(o.eta)}</span></div>
+        <p class="order-meta">Buyurtma vaqti: ${dt(o.placed)} · Jami: <b>${fmt(o.total)}</b></p>
+      </div>
+    </article>`).join("")
+  :`<div class="empty">${I.flower}<p>Hali buyurtmalar yo'q.</p><button class="btn rose" data-go="home">Gullarni ko'rish</button></div>`;
+}
+
+/* ---------- Xabarnoma ---------- */
+let tt;
+function toast(title,sub,info){
+  const t=$("#toast");
+  t.innerHTML=`<div class="ico">${I.check}</div><div><b>${esc(title)}</b><small>${esc(sub)}</small></div>`;
+  t.className="toast"+(info?" info":"");void t.offsetWidth;t.classList.add("show");
+  clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3800);
+}
+
+renderGrid();updateBadge();
+</script>
+</body>
+</html>
